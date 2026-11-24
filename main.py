@@ -38,7 +38,7 @@ def check(reply: str) -> str:
         raise ValueError("reply must not be empty or only whitespace")
     if len(text) > 140:
         raise ValueError("reply must be 1 to 140 characters, got %d" % len(text))
-    if "\n" in text:
+    if "\n" in text or "\r" in text:
         raise ValueError("reply must be a single line")
     return text
 
